@@ -35,8 +35,12 @@
     <source src="videos/patitas.mp4" type="video/mp4">
     Tu navegador no soporta videos.
 </video>
+<audio id="miMusica" autoplay loop style="display: none;">
+    <source src="musica/lanita.mp3" type="audio/mpeg">
+</audio>
 
    <p style="color: #ff69b4; font-size: 25px; font-weight: bold; margin-top: 30px;">TE AMO MARICELI❤️</p>
+   <p style="color: white; font-size: 15px; font-weight: bold; margin-top: 20px;">(Dale click para escuchar)</p>
    <script>
   function crearCorazon() {
     const corazon = document.createElement('div');
@@ -48,6 +52,12 @@
     setTimeout(() => { corazon.remove(); }, 5000);
   }
   setInterval(crearCorazon, 300);
+</script>
+<script>
+    document.addEventListener('click', function() {
+        var audio = document.getElementById('miMusica');
+        audio.play();
+    }, { once: true }); // Solo se ejecuta la primera vez que hace clic
 </script>
 </body>
 </html>
